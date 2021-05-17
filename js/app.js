@@ -1,24 +1,31 @@
 const cheerio = require ('cheerio')
-const fs = require ('fs')
+const fs = require ('fs');
+const { exit } = require('process');
 const request = require ('request-promise')
 
 arrayCountryStatic = [
+    'Albania',
     'Argentina',
+    'Alemania',
     'Bolivia',
     'Brasil',
     'Canada',
     'Chile',
     'Colombia',
     'El Salvador',
+    'Espana',
+    'Estados Unidos',
+    'Francia',
+    'Grecia',
     'Honduras',
+    'Italia',
     'Mexico',
     'Nicaragua',
     'Panama',
     'Peru',
-    'Estados Unidos',
+    'Portugal',
     'Uruguay',
     'Venezuela',
-    'Albania',
     // 'Andorra',
     // 'Austria',
     // 'Belgica',
@@ -28,12 +35,8 @@ arrayCountryStatic = [
     // 'Republica Checa',
     // 'Dinamarca', // no
     // 'Finlandia',
-    'Francia',
-    'Alemania',
-    'Grecia',
     // 'Ciudad del Vaticano',
     // 'Islandia', // no
-    'Italia',
     // 'Letonia', // no
     // 'Liechtenstein',
     // 'Lituania',
@@ -44,16 +47,14 @@ arrayCountryStatic = [
     // 'Países Bajos', // no
     // 'Noruega', // no
     // 'Polonia', // no
-    'Portugal',
     // 'Rumania', // no
     // 'San Marino',
     // 'Eslovaquia', // no
     // 'Eslovenia', // no
-    'Espana',
     // 'Suecia', // no
     // 'Suiza', // no
-    'Reino Unido',
-    'Montenegro',
+    // 'Reino Unido',
+    // 'Montenegro',
     // 'Argelia', // no
     // 'Benin', // no
     // 'Republica del Congo', // no
@@ -66,6 +67,10 @@ arrayCountryStatic = [
     // 'Nauru',
     // 'Nueva Zelanda'
   ]
+
+arrayCountryStatic.map((pais) => {
+    console.log(pais)
+})
 
 const getDataCountry =  async () => {
     let data = []
@@ -143,13 +148,13 @@ const getData = async () => {
     return await array
 }
 
-getData().then(
-    data => {
-        fs.writeFile('js/data.json', JSON.stringify(data), (err) => {
-            if(err) throw err
-            console.log('=========================')
-            console.log(' Archivo JSON, Guardado!!')
-            console.log('=========================')
-        })
-    }
-)
+// getData().then(
+//     data => {
+//         fs.writeFile('js/data.json', JSON.stringify(data), (err) => {
+//             if(err) throw err
+//             console.log('=========================')
+//             console.log(' Archivo JSON, Guardado!!')
+//             console.log('=========================')
+//         })
+//     }
+// )
