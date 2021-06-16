@@ -24,6 +24,7 @@ arrayCountryStatic = [
     'Panama',
     'Peru',
     'Portugal',
+    'Republica Dominicana',
     'Uruguay',
     'Venezuela',
     // 'Andorra',
@@ -68,9 +69,9 @@ arrayCountryStatic = [
     // 'Nueva Zelanda'
   ]
 
-arrayCountryStatic.map((pais) => {
-    console.log(pais)
-})
+// arrayCountryStatic.map((pais) => {
+//     console.log(pais)
+// })
 
 const getDataCountry =  async () => {
     let data = []
@@ -148,13 +149,13 @@ const getData = async () => {
     return await array
 }
 
-// getData().then(
-//     data => {
-//         fs.writeFile('js/data.json', JSON.stringify(data), (err) => {
-//             if(err) throw err
-//             console.log('=========================')
-//             console.log(' Archivo JSON, Guardado!!')
-//             console.log('=========================')
-//         })
-//     }
-// )
+getData().then(
+    data => {
+        fs.writeFile('js/data.json', JSON.stringify(data), (err) => {
+            if(err) throw err
+            console.log('=========================')
+            console.log(' Archivo JSON, Guardado!!')
+            console.log('=========================')
+        })
+    }
+)
